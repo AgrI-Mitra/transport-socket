@@ -38,16 +38,4 @@ export class AppController {
       this.logger.error('Error while emitting bot response', error);
     }
   }
-
-  @Post('/getClientId')
-  async adapterOutbound(@Request() req) {
-    try {
-      const { userId } = req.body;
-      const clientId: string = await this.cacheManager.get(userId);
-      return { status: 'OK', clientId };
-    } catch (error) {
-      this.logger.error('Could not get the clientId for this userId', error);
-    }
-  }
-
 }
