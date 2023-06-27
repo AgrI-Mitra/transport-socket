@@ -38,6 +38,7 @@ export class AppService {
         messageId: this.randomId(),
       };
       const params = JSON.stringify(reqst);
+      console.log('params',params)
       this.logger.log({ message: `Adapter Request => ${params}` });
       this.httpService
         .post(`${adapterEndpoint}/prompt`, params, {

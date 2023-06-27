@@ -62,7 +62,7 @@ export class SocketGateway
     await this.cacheManager.set(client['userID'], null, 86400 * 1000);
   }
 
-  @UseGuards(WsGuard)
+  // @UseGuards(WsGuard)
   @SubscribeMessage('botRequest')
   async handleMessage(client: Socket, { content, to, conversationId }: any) {
     this.logger.log(
